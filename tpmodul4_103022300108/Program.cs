@@ -23,7 +23,7 @@ class Run
         KodePos kodePos = new KodePos();
         Console.Write("Masukkan nama kelurahan: ");
         string kelurahan = Console.ReadLine();
-        int kode = kodePos.GetKodePos(kelurahan);
+        int kode = kodePos.getKodePos(kelurahan);
 
         if (kode != 0) {
             Console.WriteLine("Kode Pos untuk " + kelurahan + " : " + kode);
