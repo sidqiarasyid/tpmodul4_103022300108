@@ -16,6 +16,34 @@ class KodePos
     }
 }
 
+class DoorMachine
+{
+    private enum State { Terkunci, Terbuka }
+    private State currentState;
+    public DoorMachine()
+    {
+        currentState = State.Terkunci;
+        Console.WriteLine("Pintu terkunci");
+    }
+    public void bukaPintu()
+    {
+        if (currentState == State.Terkunci)
+        {
+            currentState = State.Terbuka;
+            Console.WriteLine("Pintu tidak terkunci");
+        }
+    }
+    public void kunciPintu()
+    {
+        if (currentState == State.Terbuka)
+        {
+            currentState = State.Terkunci;
+            Console.WriteLine("Pintu terkunci");
+        }
+    }
+}
+
+
 class Run
 {
     static void Main()
@@ -30,7 +58,13 @@ class Run
         } else {
             Console.WriteLine("Kode pos tidak ditemukan");
         }
-      
+
+        DoorMachine pintu = new DoorMachine();
+        Console.WriteLine("");
+        pintu.bukaPintu();
+        pintu.kunciPintu();
+
+
     }
 }
 
